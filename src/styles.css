@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --font-sans: "Inter", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,25 +65,34 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --background: oklch(0.13 0.018 260);
+  --foreground: oklch(0.96 0.012 250);
+  --card: oklch(0.18 0.024 258);
+  --card-foreground: oklch(0.96 0.012 250);
+  --popover: oklch(0.17 0.022 258);
+  --popover-foreground: oklch(0.96 0.012 250);
+  --primary: oklch(0.76 0.15 230);
+  --primary-foreground: oklch(0.14 0.025 255);
+  --secondary: oklch(0.22 0.025 258);
+  --secondary-foreground: oklch(0.92 0.012 250);
+  --muted: oklch(0.205 0.02 258);
+  --muted-foreground: oklch(0.7 0.025 250);
+  --accent: oklch(0.24 0.035 250);
+  --accent-foreground: oklch(0.94 0.015 245);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+  --border: oklch(0.34 0.025 255 / 55%);
+  --input: oklch(0.3 0.03 255 / 65%);
+  --ring: oklch(0.73 0.14 225);
+  --surface-raised: oklch(0.2 0.027 258);
+  --surface-deep: oklch(0.105 0.02 260);
+  --surface-soft: oklch(0.16 0.022 256);
+  --brand-cyan: oklch(0.79 0.14 205);
+  --brand-violet: oklch(0.72 0.14 295);
+  --brand-blue: oklch(0.72 0.14 245);
+  --line: oklch(0.36 0.028 255 / 50%);
+  --success: oklch(0.76 0.13 158);
+  color-scheme: dark;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -98,38 +109,46 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --background: oklch(0.13 0.018 260);
+  --foreground: oklch(0.96 0.012 250);
+  --card: oklch(0.18 0.024 258);
+  --card-foreground: oklch(0.96 0.012 250);
+  --popover: oklch(0.17 0.022 258);
+  --popover-foreground: oklch(0.96 0.012 250);
+  --primary: oklch(0.76 0.15 230);
+  --primary-foreground: oklch(0.14 0.025 255);
+  --secondary: oklch(0.22 0.025 258);
+  --secondary-foreground: oklch(0.92 0.012 250);
+  --muted: oklch(0.205 0.02 258);
+  --muted-foreground: oklch(0.7 0.025 250);
+  --accent: oklch(0.24 0.035 250);
+  --accent-foreground: oklch(0.94 0.015 245);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+  --border: oklch(0.34 0.025 255 / 55%);
+  --input: oklch(0.3 0.03 255 / 65%);
+  --ring: oklch(0.73 0.14 225);
+  --chart-1: oklch(0.75 0.15 230);
+  --chart-2: oklch(0.74 0.14 165);
+  --chart-3: oklch(0.8 0.14 95);
+  --chart-4: oklch(0.72 0.14 295);
+  --chart-5: oklch(0.72 0.17 35);
+  --sidebar: oklch(0.18 0.024 258);
+  --sidebar-foreground: oklch(0.96 0.012 250);
+  --sidebar-primary: oklch(0.76 0.15 230);
+  --sidebar-primary-foreground: oklch(0.14 0.025 255);
+  --sidebar-accent: oklch(0.22 0.025 258);
+  --sidebar-accent-foreground: oklch(0.94 0.015 245);
+  --sidebar-border: oklch(0.34 0.025 255 / 55%);
+  --sidebar-ring: oklch(0.73 0.14 225);
+  --surface-raised: oklch(0.2 0.027 258);
+  --surface-deep: oklch(0.105 0.02 260);
+  --surface-soft: oklch(0.16 0.022 256);
+  --brand-cyan: oklch(0.79 0.14 205);
+  --brand-violet: oklch(0.72 0.14 295);
+  --brand-blue: oklch(0.72 0.14 245);
+  --line: oklch(0.36 0.028 255 / 50%);
+  --success: oklch(0.76 0.13 158);
 }
 
 @layer base {
@@ -140,5 +159,262 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01" on;
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+  ::selection { background: color-mix(in oklab, var(--primary) 42%, transparent); color: var(--foreground); }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+}
+
+@utility text-display { font-family: var(--font-display); }
+
+@layer components {
+  .site-shell { min-height: 100vh; overflow: clip; background: var(--background); }
+  .page-width { width: min(100% - 3rem, 76rem); margin-inline: auto; }
+  .section-space { padding-block: clamp(5rem, 10vw, 9rem); }
+  .section-kicker { display: flex; align-items: center; gap: .65rem; color: var(--brand-cyan); font-size: .73rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  .section-kicker::before { content: ""; width: 1.35rem; height: 1px; background: currentColor; }
+  .section-title { max-width: 48rem; margin-top: 1.2rem; font-family: var(--font-display); font-size: clamp(2.2rem, 4.6vw, 4.1rem); line-height: 1.08; font-weight: 570; letter-spacing: 0; }
+  .section-copy { max-width: 39rem; margin-top: 1.15rem; color: var(--muted-foreground); line-height: 1.75; }
+  .subtle-grid { background-image: linear-gradient(to right, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(to bottom, black, transparent 93%); }
+  .glass-surface { border: 1px solid var(--line); background: color-mix(in oklab, var(--surface-raised) 88%, transparent); box-shadow: 0 20px 60px -38px oklch(0.04 0.02 260 / 85%); }
+  .top-link { color: var(--muted-foreground); transition: color .2s ease; }
+  .top-link:hover, .top-link:focus-visible { color: var(--foreground); }
+  .nav-link { min-height: 2.6rem; display: inline-flex; align-items: center; }
+  .interactive-card { border: 1px solid var(--line); background: var(--surface-soft); transition: transform .24s ease, border-color .24s ease, background .24s ease; }
+  .interactive-card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--brand-cyan) 42%, var(--line)); background: var(--surface-raised); }
+  .icon-tile { display: grid; width: 2.7rem; height: 2.7rem; place-items: center; border: 1px solid var(--line); border-radius: .65rem; color: var(--brand-cyan); background: color-mix(in oklab, var(--brand-blue) 12%, var(--surface-deep)); }
+  .pill-status { display: inline-flex; align-items: center; gap: .45rem; border: 1px solid var(--line); border-radius: 999px; padding: .32rem .62rem; color: var(--muted-foreground); background: color-mix(in oklab, var(--surface-raised) 80%, transparent); font-size: .72rem; }
+  .pill-status::before { width: .38rem; height: .38rem; border-radius: 50%; background: var(--brand-cyan); content: ""; }
+  .hero-orbit { position: absolute; width: min(66vw, 54rem); aspect-ratio: 1; border: 1px solid color-mix(in oklab, var(--brand-blue) 13%, transparent); border-radius: 50%; pointer-events: none; }
+  .hero-orbit::after { position: absolute; inset: 11%; border: 1px solid color-mix(in oklab, var(--brand-violet) 12%, transparent); border-radius: 50%; content: ""; }
+  .hero-halo { position: absolute; inset: 9% 14% auto; height: 76%; background: radial-gradient(ellipse, color-mix(in oklab, var(--brand-blue) 13%, transparent), transparent 68%); pointer-events: none; }
+  .desktop-frame { position: relative; isolation: isolate; width: min(100%, 59rem); margin-inline: auto; padding: .55rem; border: 1px solid color-mix(in oklab, var(--foreground) 20%, transparent); border-radius: .95rem; background: color-mix(in oklab, var(--surface-raised) 78%, var(--surface-deep)); box-shadow: 0 34px 90px -40px oklch(0.06 0.02 255 / 95%), 0 0 0 5px color-mix(in oklab, var(--foreground) 2%, transparent); }
+  .desktop-screen { position: relative; aspect-ratio: 1.65; overflow: hidden; border-radius: .62rem; background: radial-gradient(ellipse at 53% 58%, color-mix(in oklab, var(--brand-blue) 34%, var(--surface-deep)) 0, transparent 43%), radial-gradient(ellipse at 75% 23%, color-mix(in oklab, var(--brand-violet) 22%, transparent), transparent 35%), linear-gradient(145deg, oklch(0.15 0.19 251), oklch(0.115 0.095 264) 55%, oklch(0.135 0.15 222)); }
+  .desktop-screen::before, .desktop-screen::after { position: absolute; width: 50%; height: 150%; top: -22%; left: 25%; border: 1px solid color-mix(in oklab, var(--brand-cyan) 14%, transparent); border-radius: 50%; transform: rotate(34deg); content: ""; pointer-events: none; }
+  .desktop-screen::after { width: 35%; left: 36%; transform: rotate(-36deg); border-color: color-mix(in oklab, var(--brand-violet) 19%, transparent); }
+  .screen-glow { position: absolute; width: 48%; height: 80%; top: 1%; left: 25%; border-radius: 50%; background: color-mix(in oklab, var(--brand-blue) 18%, transparent); filter: blur(54px); }
+  .window-glass { border: 1px solid oklch(0.92 0.02 245 / 20%); background: oklch(0.15 0.03 258 / 76%); box-shadow: 0 20px 60px -27px oklch(0.04 0.03 265 / 90%); backdrop-filter: blur(18px); }
+  .window-bar { min-height: 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid oklch(0.92 0.02 245 / 12%); padding-inline: .8rem; color: oklch(0.9 0.02 245 / 85%); font-size: .65rem; }
+  .window-dot { width: .4rem; height: .4rem; border-radius: 50%; background: oklch(0.77 0.14 230); }
+  .start-panel { position: absolute; z-index: 4; bottom: 2.8rem; left: .85rem; width: min(20rem, 56%); border-radius: .68rem; padding: .85rem; transform-origin: bottom left; transition: opacity .2s ease, transform .2s ease; }
+  .start-panel[data-open="false"] { opacity: 0; transform: translateY(.5rem) scale(.98); pointer-events: none; }
+  .start-panel[data-open="true"] { opacity: 1; transform: translateY(0) scale(1); }
+  .file-window { position: absolute; z-index: 2; top: 17%; left: 22%; width: 60%; height: 61%; border-radius: .62rem; overflow: hidden; transition: transform .24s ease, opacity .24s ease; }
+  .file-window[data-hidden="true"] { opacity: .3; transform: translateY(.5rem) scale(.97); }
+  .app-icon { display: grid; aspect-ratio: 1; place-items: center; border: 1px solid oklch(0.94 0.025 250 / 12%); border-radius: .6rem; background: oklch(0.94 0.025 250 / 7%); color: oklch(0.92 0.02 245); }
+  .taskbar { position: absolute; z-index: 5; right: .55rem; bottom: .55rem; left: .55rem; min-height: 2.15rem; display: flex; align-items: center; justify-content: space-between; border: 1px solid oklch(0.92 0.02 245 / 18%); border-radius: .58rem; padding: .3rem .48rem; background: oklch(0.11 0.025 260 / 78%); color: oklch(0.94 0.02 245); backdrop-filter: blur(18px); }
+  .device-visual { position: relative; min-height: 14rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--line); border-radius: .6rem; background: radial-gradient(ellipse at 50% 53%, color-mix(in oklab, var(--brand-blue) 20%, transparent), transparent 60%), var(--surface-deep); }
+  .monitor-shell { width: 74%; aspect-ratio: 1.55; padding: .35rem; border: 1px solid color-mix(in oklab, var(--foreground) 22%, transparent); border-radius: .5rem; background: var(--surface-raised); box-shadow: 0 24px 60px -34px oklch(0.04 0.02 260); }
+  .monitor-shell::after { display: block; width: 30%; height: .6rem; margin: .35rem auto 0; border-radius: 0 0 .28rem .28rem; background: color-mix(in oklab, var(--foreground) 18%, var(--surface-raised)); content: ""; }
+  .mini-screen { width: 100%; height: calc(100% - .9rem); border-radius: .28rem; background: radial-gradient(ellipse at 55% 68%, color-mix(in oklab, var(--brand-blue) 40%, transparent), transparent 51%), linear-gradient(140deg, oklch(0.17 0.14 252), oklch(0.12 0.06 260)); }
+  .phone-shell { width: 5.7rem; aspect-ratio: .49; padding: .3rem; border: 1px solid color-mix(in oklab, var(--foreground) 30%, transparent); border-radius: 1rem; background: var(--surface-raised); box-shadow: 0 18px 50px -25px oklch(0.03 0.02 260); }
+  .phone-screen { height: 100%; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; border-radius: .78rem; padding: .55rem .38rem; background: radial-gradient(ellipse at 65% 25%, color-mix(in oklab, var(--brand-violet) 32%, transparent), transparent 42%), linear-gradient(155deg, oklch(0.16 0.13 251), oklch(0.12 0.06 260)); }
+  .target-bar { height: .38rem; border-radius: 99px; background: color-mix(in oklab, var(--brand-cyan) 61%, var(--surface-raised)); }
+  .comparison-scroll { overflow-x: auto; scrollbar-color: var(--line) transparent; }
+  .comparison-table { width: 100%; min-width: 50rem; border-collapse: collapse; text-align: left; }
+  .comparison-table th, .comparison-table td { border-bottom: 1px solid var(--line); padding: .9rem 1rem; vertical-align: top; }
+  .comparison-table th { color: var(--muted-foreground); font-size: .76rem; font-weight: 600; }
+  .comparison-table td:first-child { color: var(--foreground); font-size: .82rem; font-weight: 600; }
+  .comparison-table td:not(:first-child) { color: var(--muted-foreground); font-size: .79rem; line-height: 1.55; }
+  .comparison-table th:nth-child(2), .comparison-table td:nth-child(2) { color: var(--brand-cyan); }
+  .timeline-line { position: absolute; top: .5rem; bottom: .5rem; left: .55rem; width: 1px; background: linear-gradient(var(--brand-cyan), var(--line) 84%, transparent); }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .footer-link { color: var(--muted-foreground); transition: color .2s ease; }
+  .footer-link:hover { color: var(--foreground); }
+}
+
+@media (max-width: 767px) {
+  .page-width { width: min(100% - 2rem, 76rem); }
+  .hero-orbit { width: 94vw; }
+  .desktop-screen { aspect-ratio: 1.2; }
+  .file-window { top: 21%; left: 16%; width: 69%; height: 57%; }
+  .start-panel { width: min(17rem, 70%); }
+  .comparison-table { min-width: 46rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* ---------- NovaOS macOS-style concept desktop ---------- */
+@layer components {
+  .feature-chip { border: 1px solid var(--border); border-radius: 999px; padding: .35rem .8rem; font-size: .72rem; color: var(--muted-foreground); transition: all .25s cubic-bezier(.2,.8,.2,1); }
+  .feature-chip:hover { color: var(--foreground); border-color: color-mix(in oklab, var(--brand-cyan) 45%, transparent); }
+  .feature-chip[aria-pressed="true"] { color: var(--foreground); background: color-mix(in oklab, var(--brand-cyan) 14%, transparent); border-color: color-mix(in oklab, var(--brand-cyan) 55%, transparent); }
+
+  .mac-screen { position: relative; aspect-ratio: 1.65; overflow: hidden; border-radius: .62rem; color: oklch(0.96 0.01 250); font-family: inherit; }
+  .mac-wallpaper { position: absolute; inset: 0; background:
+      radial-gradient(60% 70% at 25% 85%, oklch(0.55 0.2 250 / 70%), transparent 60%),
+      radial-gradient(50% 60% at 80% 20%, oklch(0.55 0.2 300 / 55%), transparent 60%),
+      radial-gradient(40% 50% at 60% 70%, oklch(0.7 0.14 200 / 45%), transparent 60%),
+      linear-gradient(160deg, oklch(0.2 0.08 260), oklch(0.12 0.05 270));
+    animation: wallpaper-drift 24s ease-in-out infinite alternate; background-size: 120% 120%; }
+  @keyframes wallpaper-drift { from { background-position: 0% 0%; } to { background-position: 100% 100%; } }
+
+  .mac-menubar { position: absolute; z-index: 40; inset: 0 0 auto 0; height: 1.45rem; display: flex; align-items: center; justify-content: space-between; padding-inline: .7rem; font-size: .6rem; background: oklch(0.15 0.03 260 / 35%); backdrop-filter: blur(20px) saturate(1.6); }
+
+  .desk-icon { display: grid; justify-items: center; gap: .25rem; color: oklch(0.97 0 0); text-shadow: 0 1px 2px oklch(0 0 0 / 60%); }
+  .desk-icon-img { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: .5rem; background: oklch(0.65 0.15 240 / 55%); transition: transform .2s; }
+  .desk-icon:hover .desk-icon-img { transform: scale(1.08); }
+
+  .mac-window { position: absolute; top: 14%; left: 14%; width: 56%; height: 58%; display: flex; flex-direction: column; overflow: hidden; border-radius: .7rem;
+    border: 1px solid oklch(1 0 0 / 14%); background: oklch(0.19 0.02 260 / 82%); backdrop-filter: blur(30px) saturate(1.5);
+    box-shadow: 0 30px 70px -20px oklch(0 0 0 / 70%), 0 0 0 .5px oklch(0 0 0 / 40%);
+    transform-origin: 50% 140%; transition: transform .45s cubic-bezier(.2,.9,.25,1.05), opacity .35s ease, top .45s cubic-bezier(.2,.9,.25,1), left .45s cubic-bezier(.2,.9,.25,1), width .45s cubic-bezier(.2,.9,.25,1), height .45s cubic-bezier(.2,.9,.25,1), box-shadow .3s; }
+  .mac-window[data-state="closed"] { opacity: 0; transform: scale(.85); pointer-events: none; }
+  .mac-window[data-state="minimized"] { opacity: 0; transform: translateY(70%) scale(.08, .05); pointer-events: none; transition-duration: .55s; }
+  .mac-window[data-focused="false"] { box-shadow: 0 15px 40px -20px oklch(0 0 0 / 55%); }
+  .mac-window[data-focused="false"] .tl { background: oklch(0.5 0.01 260 / 60%); }
+  .mac-window[data-max="true"] { top: 1.45rem !important; left: 0 !important; width: 100% !important; height: calc(100% - 1.45rem - 3.4rem) !important; border-radius: 0; }
+  .mac-window.win-notes { top: 22%; left: 50%; width: 32%; height: 44%; }
+  .mac-window.win-terminal { top: 30%; left: 28%; width: 44%; height: 40%; background: oklch(0.12 0.01 260 / 88%); }
+  .mac-window.win-settings { top: 18%; left: 36%; width: 40%; height: 52%; }
+  .mac-window.snap-left { top: 1.6rem; left: .5%; width: 49%; height: calc(100% - 5.2rem); }
+  .mac-window.snap-right { top: 1.6rem; left: 50.5%; width: 49%; height: calc(100% - 5.2rem); }
+
+  .mac-titlebar { flex-shrink: 0; height: 1.6rem; display: flex; align-items: center; justify-content: space-between; padding-inline: .55rem; border-bottom: 1px solid oklch(1 0 0 / 8%); font-size: .6rem; }
+  .mac-title { font-weight: 600; opacity: .85; }
+  .traffic { display: flex; gap: .3rem; width: 2.5rem; }
+  .tl { width: .6rem; height: .6rem; border-radius: 50%; transition: filter .15s, background .2s; }
+  .tl:hover { filter: brightness(1.2); }
+  .tl-close { background: oklch(0.68 0.21 25); } .tl-min { background: oklch(0.82 0.16 85); } .tl-max { background: oklch(0.72 0.18 145); }
+  .mac-body { flex: 1; min-height: 0; overflow: hidden; }
+
+  .mac-sidebar { padding: .5rem; font-size: .56rem; background: oklch(1 0 0 / 4%); border-right: 1px solid oklch(1 0 0 / 7%); }
+  .mac-side-label { margin-bottom: .2rem; font-size: .48rem; font-weight: 600; opacity: .5; }
+  .mac-side-item { padding: .2rem .4rem; border-radius: .3rem; opacity: .8; }
+  .mac-side-item.is-active { background: oklch(1 0 0 / 12%); opacity: 1; }
+  .file-tile { display: grid; justify-items: center; gap: .25rem; padding: .35rem; border-radius: .4rem; font-size: .52rem; transition: background .2s; animation: tile-in .4s both cubic-bezier(.2,.9,.3,1); }
+  .file-tile:hover { background: oklch(1 0 0 / 8%); }
+  .file-tile-icon { display: grid; place-items: center; width: 100%; aspect-ratio: 1.3; border-radius: .35rem; color: oklch(0.85 0.12 230); background: oklch(0.65 0.15 240 / 22%); }
+  @keyframes tile-in { from { opacity: 0; transform: translateY(6px) scale(.96); } }
+  .terminal-body { padding: .6rem; font-family: ui-monospace, monospace; font-size: .58rem; line-height: 1.6; color: oklch(0.85 0.15 150); white-space: pre-wrap; }
+  .caret { display: inline-block; width: .35rem; height: .7rem; vertical-align: middle; background: currentColor; animation: caret 1s steps(1) infinite; }
+  @keyframes caret { 50% { opacity: 0; } }
+
+  .mac-dock { position: absolute; z-index: 45; bottom: .45rem; left: 50%; transform: translateX(-50%); display: flex; align-items: flex-end; gap: .3rem; padding: .3rem .4rem; border-radius: .9rem;
+    border: 1px solid oklch(1 0 0 / 18%); background: oklch(0.25 0.03 260 / 40%); backdrop-filter: blur(24px) saturate(1.7); box-shadow: 0 10px 30px -10px oklch(0 0 0 / 60%); }
+  .dock-item { position: relative; display: grid; justify-items: center; transition: transform .25s cubic-bezier(.3,1.6,.5,1), margin .25s cubic-bezier(.3,1.6,.5,1); transform-origin: bottom center; }
+  .dock-item:hover { transform: scale(1.45) translateY(-4px); margin-inline: .45rem; }
+  .dock-item:hover + .dock-item, .dock-item:has(+ .dock-item:hover) { transform: scale(1.18) translateY(-2px); margin-inline: .15rem; }
+  .dock-item[data-bounce="true"] .dock-icon { animation: dock-bounce .7s cubic-bezier(.3,.7,.4,1); }
+  @keyframes dock-bounce { 0%,100% { transform: translateY(0); } 30% { transform: translateY(-55%); } 55% { transform: translateY(0); } 75% { transform: translateY(-20%); } }
+  .dock-icon { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: .55rem; color: oklch(1 0 0); box-shadow: inset 0 1px 0 oklch(1 0 0 / 30%), 0 3px 8px -2px oklch(0 0 0 / 50%); }
+  .dock-tone-blue { background: linear-gradient(180deg, oklch(0.72 0.15 240), oklch(0.52 0.19 255)); }
+  .dock-tone-amber { background: linear-gradient(180deg, oklch(0.9 0.14 90), oklch(0.75 0.16 70)); color: oklch(0.3 0.05 70); }
+  .dock-tone-slate { background: linear-gradient(180deg, oklch(0.35 0.02 260), oklch(0.18 0.02 260)); }
+  .dock-tone-gray { background: linear-gradient(180deg, oklch(0.75 0.01 260), oklch(0.5 0.01 260)); }
+  .dock-tone-cyan { background: linear-gradient(180deg, oklch(0.75 0.14 210), oklch(0.5 0.18 250)); }
+  .dock-tone-violet { background: linear-gradient(180deg, oklch(0.7 0.17 300), oklch(0.5 0.2 285)); }
+  .dock-dot { width: .2rem; height: .2rem; margin-top: .15rem; border-radius: 50%; background: oklch(1 0 0 / 85%); opacity: 0; transition: opacity .3s; }
+  .dock-dot[data-on="true"] { opacity: 1; }
+  .dock-tip { position: absolute; bottom: calc(100% + .35rem); padding: .1rem .4rem; border-radius: .3rem; font-size: .45rem; white-space: nowrap; background: oklch(0.2 0.02 260 / 85%); opacity: 0; transform: translateY(3px); transition: all .15s; pointer-events: none; }
+  .dock-item:hover .dock-tip { opacity: 1; transform: translateY(0); }
+  .dock-sep { align-self: stretch; width: 1px; margin: .2rem .15rem; background: oklch(1 0 0 / 20%); }
+
+  .mac-launchpad { position: absolute; z-index: 42; inset: 0; display: grid; place-items: center; background: oklch(0.15 0.03 260 / 45%); backdrop-filter: blur(22px); transition: opacity .35s ease, transform .35s cubic-bezier(.2,.9,.3,1); }
+  .mac-launchpad[data-open="false"] { opacity: 0; transform: scale(1.08); pointer-events: none; }
+  .lp-item { display: grid; justify-items: center; gap: .3rem; font-size: .55rem; transition: transform .35s cubic-bezier(.2,.9,.3,1.2), opacity .3s; }
+  .mac-launchpad[data-open="false"] .lp-item { opacity: 0; transform: scale(.7); }
+  .lp-item:hover .dock-icon { transform: scale(1.1); }
+  .lp-item .dock-icon { width: 2.6rem; height: 2.6rem; transition: transform .2s; }
+
+  .mac-spotlight { position: absolute; z-index: 43; top: 20%; left: 50%; width: min(18rem, 60%); border-radius: .7rem; border: 1px solid oklch(1 0 0 / 15%); background: oklch(0.22 0.02 260 / 80%); backdrop-filter: blur(30px); box-shadow: 0 25px 60px -15px oklch(0 0 0 / 70%);
+    transform: translateX(-50%); transition: opacity .25s, transform .3s cubic-bezier(.2,.9,.3,1.2); }
+  .mac-spotlight[data-open="false"] { opacity: 0; transform: translateX(-50%) scale(.94); pointer-events: none; }
+  .spot-row { display: flex; width: 100%; align-items: center; gap: .45rem; padding: .3rem .45rem; border-radius: .35rem; }
+  .spot-row:hover { background: oklch(0.6 0.17 250 / 70%); }
+
+  .mac-control { position: absolute; z-index: 44; top: 1.7rem; right: .45rem; width: min(11rem, 42%); padding: .45rem; border-radius: .75rem; border: 1px solid oklch(1 0 0 / 15%); background: oklch(0.22 0.02 260 / 70%); backdrop-filter: blur(30px) saturate(1.6); font-size: .52rem;
+    transform-origin: top right; transition: opacity .25s, transform .3s cubic-bezier(.2,.9,.3,1.2); }
+  .mac-control[data-open="false"] { opacity: 0; transform: scale(.9) translateY(-4px); pointer-events: none; }
+  .cc-tile { display: flex; align-items: center; gap: .3rem; padding: .35rem .4rem; border-radius: .45rem; background: oklch(1 0 0 / 9%); }
+  .cc-tile.is-on svg { color: oklch(0.75 0.15 240); }
+  .cc-slider { display: flex; align-items: center; gap: .35rem; margin-top: .4rem; padding: .35rem .4rem; border-radius: .45rem; background: oklch(1 0 0 / 9%); }
+  .cc-track { flex: 1; height: .3rem; border-radius: 99px; background: oklch(1 0 0 / 15%); overflow: hidden; }
+  .cc-track > span { display: block; height: 100%; background: oklch(0.97 0 0); }
+
+  .mac-toast { position: absolute; z-index: 41; top: 1.8rem; right: .5rem; display: flex; gap: .45rem; align-items: center; width: min(12rem, 45%); padding: .45rem; border-radius: .7rem; font-size: .52rem; cursor: pointer;
+    border: 1px solid oklch(1 0 0 / 14%); background: oklch(0.24 0.02 260 / 72%); backdrop-filter: blur(30px); transition: transform .5s cubic-bezier(.2,.9,.3,1.1), opacity .4s; }
+  .mac-toast[data-open="false"] { opacity: 0; transform: translateX(115%); pointer-events: none; }
+
+  .mac-lock { position: absolute; z-index: 60; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: oklch(0.98 0 0); background: oklch(0.12 0.04 265 / 55%); backdrop-filter: blur(26px); transition: opacity .5s ease, transform .5s ease; }
+  .mac-lock[data-open="false"] { opacity: 0; transform: scale(1.04); pointer-events: none; }
+}
+
+@media (max-width: 767px) {
+  .mac-screen { aspect-ratio: 1.15; }
+  .mac-window { left: 5%; width: 75%; }
+  .mac-window.win-notes { left: 40%; width: 55%; }
+  .mac-window.win-settings { left: 20%; width: 70%; }
+  .dock-icon { width: 1.6rem; height: 1.6rem; }
+}
+
+/* Smooth, compositor-friendly desktop motion: stable geometry, transformed states. */
+@layer components {
+  .mac-window {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transition-property: transform, opacity, box-shadow, border-radius;
+    transition-duration: 480ms, 320ms, 320ms, 480ms;
+    transition-timing-function: cubic-bezier(.22, 1, .36, 1), ease, ease, cubic-bezier(.22, 1, .36, 1);
+  }
+  .mac-window[data-state="closed"] { visibility: hidden; }
+  .mac-window[data-state="open"] { visibility: visible; }
+  .mac-window[data-state="minimized"] { visibility: hidden; }
+  .mac-window[data-max="true"] {
+    top: 14%; left: 14%; width: 56%; height: 58%;
+    transform: translate3d(-25%, -19%, 0) scale(1.78, 1.72);
+    border-radius: .2rem;
+  }
+  .mac-window.snap-left {
+    top: 14%; left: 14%; width: 56%; height: 58%;
+    transform: translate3d(-24%, -18%, 0) scale(.87, 1.63);
+    border-radius: .45rem;
+  }
+  .mac-window.snap-right {
+    top: 22%; left: 50%; width: 32%; height: 44%;
+    transform: translate3d(2%, -34%, 0) scale(1.53, 1.61);
+    border-radius: .45rem;
+  }
+  .mac-window.win-notes:not(.snap-right) { top: 22%; left: 50%; width: 32%; height: 44%; }
+  .mac-window.win-terminal { top: 30%; left: 28%; width: 44%; height: 40%; }
+  .mac-window.win-settings { top: 18%; left: 36%; width: 40%; height: 52%; }
+  .mac-window[data-max="true"] .mac-body { contain: layout paint; }
+
+  .mac-launchpad, .mac-spotlight, .mac-control, .mac-toast, .mac-lock,
+  .file-tile, .dock-icon, .dock-tip, .feature-chip, .interactive-card {
+    backface-visibility: hidden;
+  }
+  .mac-launchpad { will-change: opacity, transform; transition-duration: 440ms; }
+  .mac-spotlight, .mac-control { will-change: opacity, transform; transition-duration: 360ms; }
+  .mac-toast { will-change: opacity, transform; }
+  .file-tile { animation-duration: 520ms; animation-timing-function: cubic-bezier(.22, 1, .36, 1); }
+  .dock-item { transition-timing-function: cubic-bezier(.22, 1, .36, 1); }
+  .feature-chip { transition-duration: 300ms; }
+  .interactive-card { transition-duration: 360ms; }
+  .site-shell[data-reduced-motion="true"] *,
+  .site-shell[data-reduced-motion="true"] *::before,
+  .site-shell[data-reduced-motion="true"] *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .mac-window[data-max="true"] { transform: translate3d(-25%, -19%, 0) scale(1.78, 1.72); }
+  .mac-window.snap-left { transform: translate3d(-24%, -18%, 0) scale(.87, 1.63); }
+  .mac-window.snap-right { transform: translate3d(2%, -34%, 0) scale(1.53, 1.61); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mac-window, .mac-launchpad, .mac-spotlight, .mac-control, .mac-toast, .mac-lock,
+  .file-tile, .dock-icon, .dock-tip, .feature-chip, .interactive-card {
+    will-change: auto !important;
   }
 }
