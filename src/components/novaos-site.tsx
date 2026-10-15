@@ -48,6 +48,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import novaosSymbol from "@/assets/novaos-symbol.png.asset.json";
+import novaosLogo from "@/assets/novaos-logo-horizontal.png.asset.json";
 
 const links = [
   ["Overview", "overview"],
@@ -139,17 +141,11 @@ const faqs = [
 ] as const;
 
 function NovaMark({ className = "size-8" }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" className={className} viewBox="0 0 40 40" fill="none">
-      <path d="M20 2.8 24.3 15.7 37.2 20l-12.9 4.3L20 37.2l-4.3-12.9L2.8 20l12.9-4.3L20 2.8Z" fill="url(#nova-gradient)" />
-      <circle cx="20" cy="20" r="4" fill="currentColor" />
-      <defs><linearGradient id="nova-gradient" x1="6" y1="34" x2="34" y2="6" gradientUnits="userSpaceOnUse"><stop stopColor="currentColor" stopOpacity=".42"/><stop offset=".52" stopColor="currentColor"/><stop offset="1" stopColor="currentColor" stopOpacity=".68"/></linearGradient></defs>
-    </svg>
-  );
+  return <img aria-hidden="true" className={className} src={novaosSymbol.url} alt="" />;
 }
 
 function Brand({ compact = false }: { compact?: boolean }) {
-  return <a className="inline-flex items-center gap-2.5 text-foreground" href="#overview" aria-label="NovaOS home"><NovaMark className="size-8 text-brand-cyan" /><span className={compact ? "font-semibold" : "font-display text-lg font-semibold"}>NovaOS</span></a>;
+  return <a className="inline-flex items-center text-foreground" href="#overview" aria-label="NovaOS home"><img className={compact ? "nova-logo-compact" : "nova-logo"} src={novaosLogo.url} alt="NovaOS" /></a>;
 }
 
 function SiteHeader({ onDownload }: { onDownload: () => void }) {

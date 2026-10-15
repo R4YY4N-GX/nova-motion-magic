@@ -263,17 +263,19 @@
   .mac-window { position: absolute; top: 14%; left: 14%; width: 56%; height: 58%; display: flex; flex-direction: column; overflow: hidden; border-radius: .7rem;
     border: 1px solid oklch(1 0 0 / 14%); background: oklch(0.19 0.02 260 / 82%); backdrop-filter: blur(30px) saturate(1.5);
     box-shadow: 0 30px 70px -20px oklch(0 0 0 / 70%), 0 0 0 .5px oklch(0 0 0 / 40%);
-    transform-origin: 50% 140%; transition: transform .45s cubic-bezier(.2,.9,.25,1.05), opacity .35s ease, top .45s cubic-bezier(.2,.9,.25,1), left .45s cubic-bezier(.2,.9,.25,1), width .45s cubic-bezier(.2,.9,.25,1), height .45s cubic-bezier(.2,.9,.25,1), box-shadow .3s; }
-  .mac-window[data-state="closed"] { opacity: 0; transform: scale(.85); pointer-events: none; }
-  .mac-window[data-state="minimized"] { opacity: 0; transform: translateY(70%) scale(.08, .05); pointer-events: none; transition-duration: .55s; }
+    transform-origin: 0 0; will-change: transform, opacity; backface-visibility: hidden;
+    transition: transform 480ms cubic-bezier(.22,1,.36,1), opacity 320ms ease, box-shadow 320ms ease, border-radius 480ms cubic-bezier(.22,1,.36,1), visibility 0s linear 480ms; }
+  .mac-window[data-state="closed"] { opacity: 0; transform: translate3d(0, .65rem, 0) scale(.94); visibility: hidden; pointer-events: none; }
+  .mac-window[data-state="open"] { visibility: visible; transition-delay: 0s; }
+  .mac-window[data-state="minimized"] { opacity: 0; transform: translate3d(0, 4.5rem, 0) scale(.18, .12); visibility: hidden; pointer-events: none; transition-duration: 480ms, 320ms, 320ms, 480ms, 0s; transition-delay: 0s, 0s, 0s, 0s, 480ms; }
   .mac-window[data-focused="false"] { box-shadow: 0 15px 40px -20px oklch(0 0 0 / 55%); }
   .mac-window[data-focused="false"] .tl { background: oklch(0.5 0.01 260 / 60%); }
-  .mac-window[data-max="true"] { top: 1.45rem !important; left: 0 !important; width: 100% !important; height: calc(100% - 1.45rem - 3.4rem) !important; border-radius: 0; }
+  .mac-window[data-max="true"] { transform: translate3d(-25%, -21%, 0) scale(1.78, 1.5); border-radius: .2rem; }
   .mac-window.win-notes { top: 22%; left: 50%; width: 32%; height: 44%; }
   .mac-window.win-terminal { top: 30%; left: 28%; width: 44%; height: 40%; background: oklch(0.12 0.01 260 / 88%); }
   .mac-window.win-settings { top: 18%; left: 36%; width: 40%; height: 52%; }
-  .mac-window.snap-left { top: 1.6rem; left: .5%; width: 49%; height: calc(100% - 5.2rem); }
-  .mac-window.snap-right { top: 1.6rem; left: 50.5%; width: 49%; height: calc(100% - 5.2rem); }
+  .mac-window.snap-left { transform: translate3d(-24%, -20%, 0) scale(.87, 1.58); border-radius: .45rem; }
+  .mac-window.snap-right { transform: translate3d(2%, -44%, 0) scale(1.53, 1.58); border-radius: .45rem; }
 
   .mac-titlebar { flex-shrink: 0; height: 1.6rem; display: flex; align-items: center; justify-content: space-between; padding-inline: .55rem; border-bottom: 1px solid oklch(1 0 0 / 8%); font-size: .6rem; }
   .mac-title { font-weight: 600; opacity: .85; }
@@ -350,11 +352,16 @@
   .mac-window { left: 5%; width: 75%; }
   .mac-window.win-notes { left: 40%; width: 55%; }
   .mac-window.win-settings { left: 20%; width: 70%; }
+  .mac-window[data-max="true"] { transform: translate3d(-7%, -21%, 0) scale(1.25, 1.5); }
+  .mac-window.snap-left { transform: translate3d(-6%, -20%, 0) scale(.65, 1.58); }
+  .mac-window.snap-right { transform: translate3d(18%, -44%, 0) scale(.89, 1.58); }
   .dock-icon { width: 1.6rem; height: 1.6rem; }
 }
 
 /* Smooth, compositor-friendly desktop motion: stable geometry, transformed states. */
 @layer components {
+  .nova-logo { display: block; width: 9rem; height: 2.5rem; object-fit: contain; object-position: left center; }
+  .nova-logo-compact { display: block; width: 7.25rem; height: 2rem; object-fit: contain; object-position: left center; }
   .mac-window {
     will-change: transform, opacity;
     backface-visibility: hidden;
@@ -385,6 +392,28 @@
   .mac-window.win-settings { top: 18%; left: 36%; width: 40%; height: 52%; }
   .mac-window[data-max="true"] .mac-body { contain: layout paint; }
 
+  .mac-launchpad, .mac-spotlight, .mac-control, .mac-toast, .mac-lock,
+  .file-tile, .dock-icon, .dock-tip, .feature-chip, .interactive-card {
+    backface-visibility: hidden;
+  }
+  .mac-launchpad { will-change: opacity, transform; transition-duration: 440ms; }
+  .mac-spotlight, .mac-control { will-change: opacity, transform; transition-duration: 360ms; }
+  .mac-toast { will-change: opacity, transform; }
+  .file-tile { animation-duration: 520ms; animation-timing-function: cubic-bezier(.22, 1, .36, 1); }
+  .dock-item { transition-timing-function: cubic-bezier(.22, 1, .36, 1); }
+  .feature-chip { transition-duration: 300ms; }
+  .interactive-card { transition-duration: 360ms; }
+  .site-shell[data-reduced-motion="true"] *,
+  .site-shell[data-reduced-motion="true"] *::before,
+  .site-shell[data-reduced-motion="true"] *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@layer components {
   .mac-launchpad, .mac-spotlight, .mac-control, .mac-toast, .mac-lock,
   .file-tile, .dock-icon, .dock-tip, .feature-chip, .interactive-card {
     backface-visibility: hidden;
